@@ -6,6 +6,12 @@
   background-color: #f25c05;
   z-index: 2;
 }
+.block-17 {
+    height: auto;
+}
+form {
+    height: 52px !important;
+}
 .block-17 form .fields {
   width: calc(100% - 140px);
   position: relative;
@@ -24,12 +30,16 @@
   border: transparent;
   background: transparent !important;
   color: #404044 !important;
-  border: 1px solid black;
   border-radius: 0px;
   font-size: 16px;
   width: 100%;
   height: 52px !important;
 }
+.block-17 form .fields  label {
+    color: #404044;
+    font-weight: 700;
+}
+
 .block-17 form .fields .one-third:last-child {
   border-right: none;
 }
@@ -46,7 +56,6 @@
   border: transparent !important;
   background: transparent !important;
   color: #404044 !important;
-  border: 1px solid #000 !important;
   font-size: 16px;
   width: 100%;
  height: 52px !important;
@@ -63,13 +72,39 @@
 .css-tr4s17-option {
     background-color: #404044 !important;
 }
+
+.block-17 form .search-submit {
+    width: 120px;
+    margin-left: 20px;
+    background: #fff;
+    border: 2px solid #fff;
+    color: #404044;
+}
+.block-17 form .search-submit:hover {
+    background: #f25c05;
+    border: 2px solid #fff;
+    color: #fff;
+}
 @media (min-width: 768px) {
   .section-reservation .reservation {
     margin-top: -145px;
   }
-  .reservation .col-md-2 {
+
+}
+@media (min-width: 992px) {
+   .reservation .col-md-2 {
     width: 20% !important;
   }
+}
+@media (max-width: 767.98px) {
+    .reservation {
+        padding-bottom: 3em;
+    }
+    .block-17 form .search-submit {
+    width: 100%;
+    margin-left: 0;
+    padding: 10px;
+}
 }
 @media (max-width: 991.98px) {
   .block-17 form .fields {
@@ -81,5 +116,9 @@
     padding-left: 0px;
     padding-right: 0;
     margin-bottom: 10px;
-  }
+ 
+}
+  form {
+    height: auto !important;
+}
 }
