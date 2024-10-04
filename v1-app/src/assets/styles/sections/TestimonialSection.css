@@ -1,0 +1,21 @@
+.testimony-section {
+    position: relative;
+}
+.testimony-section .swiper-wrapper {
+    padding-top: 3.5em;
+    padding-bottom: 1em;
+}
+.swiper-button-prev,
+.swiper-button-next {
+  z-index: 1050 !important;
+  color: inherit !important;
+}
+.swiper-pagination-bullet-active {
+    background: #ffb400 !important;
+}
+@media (max-width: 768px) {
+  .testimonial-swiper .swiper-button-next,
+  .testimonial-swiper .swiper-button-prev {
+    display: none;
+  }
+}

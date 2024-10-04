@@ -1,0 +1,23 @@
+.welcome-area .welcome-img {
+  padding-left: 10%;
+}
+.welcome-area .welcome-text {
+  padding-right: 50%;
+}
+.welcome-area .style-change {
+  color: #ffb606;
+  font-style: italic;
+}
+
+
+@media (max-width: 575.98px) {
+  .welcome-area .welcome-img {
+    padding: 0;
+  }
+  .welcome-area .welcome-text {
+    padding: 0 5%;
+  }
+  .food-area {
+    background-image: none;
+  }
+}

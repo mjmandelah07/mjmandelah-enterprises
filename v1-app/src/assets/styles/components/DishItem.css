@@ -1,0 +1,47 @@
+.order-last {
+    -webkit-box-ordinal-group: 14;
+    -ms-flex-order: 13;
+    order: 13;
+}
+.order-first {
+    -webkit-box-ordinal-group: 0;
+    -ms-flex-order: -1;
+    order: -1;
+}
+.block-3 .text, .block-3 .image {
+    width: 100%;
+    padding: 7%;
+}
+.block-3 .image {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.block-3 .text {
+    background: #fff;
+}
+.block-3 .text .heading {
+    font-size: 20px;
+    margin-bottom: .5rem;
+}
+.block-3 .text .css-e784if-MuiTypography-root {
+    line-height: 1.8 !important;
+    font-family: "Muli", Arial, sans-serif;
+    margin-bottom: 1rem;
+}
+.block-3 .text .price {
+    color: #ffb400;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+@media (min-width: 768px) {
+    .block-3 .text, .block-3 .image {
+        width: 50%;
+        padding: 7%;
+    }
+}
+@media (max-width: 767.98px) {
+    .block-3 .image {
+        height: 300px;
+    }
+}

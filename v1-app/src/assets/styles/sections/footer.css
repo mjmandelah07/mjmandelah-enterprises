@@ -1,0 +1,53 @@
+.ftco-footer {
+    font-size: 16px;
+    background: #27272b;
+    padding: 8em 0;
+}
+.ftco-footer .ftco-footer-widget h2 {
+    font-weight: normal;
+    color: #fff;
+    margin-bottom: 40px;
+    font-size: 24px;
+}
+.ftco-footer .ftco-heading-2 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #404044;
+}
+.ftco-footer p {
+    color: rgba(255, 255, 255, 0.5);
+}
+.ftco-footer-social li {
+    list-style: none;
+    margin: 0 10px 0 0;
+    display: inline-block;
+}
+.ftco-footer a {
+    color: rgba(255, 255, 255, 0.5);
+
+}
+.ftco-footer .ftco-footer-widget ul li a span {
+    color: #fff;
+}
+.subscribe-form .form-group {
+    position: relative;
+    margin-bottom: 0;
+}
+.subscribe-form .icon {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+.subscribe-form .form-group input {
+    padding-right: 50px;
+    background: transparent !important;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.5) !important;
+}
+.subscribe-form .form-group input::placeholder {
+   color: rgba(255, 255, 255, 0.5) !important;
+  opacity: 1;
+}

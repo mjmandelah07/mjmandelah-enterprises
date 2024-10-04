@@ -1,0 +1,119 @@
+.owl-carousel.home-slider {
+  z-index: 0;
+  position: relative;
+}
+.owl-carousel.owl-loaded {
+  display: block;
+}
+.owl-carousel {
+  position: relative;
+  display: none;
+  width: 100%;
+}
+.carousel-inner .carousel-item img {
+  height: calc(100vh - 117px);
+  min-height: 700px;
+  opacity: 0.8;
+}
+.carousel-inner .carousel-item {
+  opacity: 0.4;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: calc(100vh - 117px);
+  min-height: 700px;
+  position: relative;
+}
+
+.image-1 {
+  background-image: url("../../images/hero/bg_3.jpg.webp");
+}
+
+.image-2 {
+  background: url("../../images/hero/home-banner2.jpg");
+}
+.image-3 {
+  background: url("../../images/hero/home-banner3.jpg");
+}
+.carousel-inner .carousel-item .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  content: "";
+  background: #404044;
+  opacity: 0.5;
+}
+.carousel-inner .slider-text {
+  color: #fff;
+  height: calc(100vh - 117px);
+  min-height: 700px;
+}
+.carousel-inner .slider-text h1 {
+  font-family: "Indie Flower", cursive;
+  font-size: 72px;
+  color: #fff;
+  line-height: 1.2;
+  font-weight: 400;
+}
+.carousel-inner .slider-text p {
+  font-size: 20px;
+  line-height: 1.5;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.8);
+}
+.btn {
+    cursor: pointer;
+    border-radius: 0px;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+}
+.btn.btn-primary {
+    background: var(--bs-primary);
+    border: 2px solid var(--bs-primary);
+    color: #fff;
+}
+.btn.btn-outline-white {
+    border-color: rgba(255, 255, 255, 0.8);
+    background: none;
+    border-radius: 0px;
+    border-width: 2px;
+}
+/* Apply styles for .ftco-animate */
+/* .ftco-animate {
+    opacity: 0;
+    visibility: hidden;
+} */
+
+/* Apply styles for .ftco-animated */
+.ftco-animated {
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+/* Define keyframes for fadeInUp animation */
+@keyframes site2fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply styles for .fadeInUp */
+.heroFadeInUp {
+  -webkit-animation-name: site2fadeInUp;
+  animation-name: site2fadeInUp;
+}
+
+@media (max-width: 991.98px) {
+  .carousel-inner .slider-text h1 {
+    font-size: 40px;
+  }
+}

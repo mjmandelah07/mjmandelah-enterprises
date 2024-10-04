@@ -1,0 +1,49 @@
+.dish-menu .menus {
+  width: 100%;
+  background: #fafafa;
+  padding: 15px;
+  margin-bottom: 30px;
+  -webkit-box-shadow: 0px 1px 18px -12px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 1px 18px -12px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 1px 18px -12px rgba(0, 0, 0, 0.75);
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.dish-menu .menus:hover {
+    background: #ffb400;
+}
+.dish-menu .menus .menu-img {
+    margin-right: 20px;
+    width: 70px;
+    height: 70px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    border-radius: 50%;
+}
+.dish-menu .menus .text {
+    width: calc(100% - 100px);
+}
+.dish-menu .menus .text .one-half {
+    width: calc(100% - 80px);
+}
+.dish-menu .menus .text .one-half h3 {
+    font-size: 18px !important;
+    color: #404044;
+}
+.dish-menu .menus .text .one-half p {
+    margin-bottom: 0;
+    font-size: 16px !important;
+}
+.dish-menu .menus .text .one-forth {
+    width: 80px;
+    text-align: right;
+}
+.dish-menu .menus .text .one-forth .price {
+    font-size: 30px;
+    color: #404044;
+    line-height: 1.4;
+}

@@ -1,0 +1,18 @@
+.special-dish {
+    margin-top: -200px;
+}
+.no-gutters {
+    margin-right: 0;
+    margin-left: 0;
+}
+@media (min-width: 576px) {
+  .css-1oqqzyl-MuiContainer-root {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .css-1oqqzyl-MuiContainer-root {
+    max-width: 720px;
+  }
+}
