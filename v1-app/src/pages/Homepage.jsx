@@ -10,9 +10,24 @@ import Instagram from "../sections/Instagram";
 import Footer from "../sections/Footer";
 
 export default function Homepage() {
+   const customContent = (
+     <>
+       <h1 className="mb-3">
+         Order food for yourself at a time convenient for you
+       </h1>
+       <p>
+         <a
+           href="/order"
+           className="btn btn-primary btn-outline-white px-5 py-3"
+         >
+           Order now
+         </a>
+       </p>
+     </>
+   );
   return (
     <>
-      <Hero />
+      <Hero content={customContent} />
       <OrderHeroForm />
       <WelcomeArea />
       <FoodArea />

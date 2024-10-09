@@ -24,7 +24,7 @@ const FoodArea = () => {
 
   return (
     <ThemeProvider theme={theme}>
-      <section className="section-padding food-area">
+      <section className="section-padding food-area" id="menu">
         <Container className="dish-menu">
           <Box
             display="flex"
@@ -35,7 +35,7 @@ const FoodArea = () => {
               className="wow fadeInUp animate__fadeInUp col-md-7 text-center heading-section"
               data-aos="fade-up"
             >
-              <Typography variant="subtitle1" className="subheading">
+              <Typography variant="subtitle1" className="subheading" sx={{marginBottom: "20px"}}>
                 Our Menu
               </Typography>
               <Typography variant="h2">Discover Our Exclusive Menu</Typography>
@@ -91,7 +91,7 @@ const FoodArea = () => {
             ))}
           </Tabs>
 
-          <Grid container spacing={3} paddingY={7} className="tab-content">
+          <Grid container spacing={2} paddingY={6} className="tab-content">
             {foodData[tabs[parseInt(value)].label.toLowerCase()].map(
               (item, index) => (
                 <Grid item xs={12} sm={6} md={6} key={index} data-aos="fade-up">
@@ -114,7 +114,7 @@ const FoodArea = () => {
               texts it is an almost
             </p>
             <span>
-              <a href="#order" className="btn btn-primary btn-outline-primary p-3">
+              <a href="/order" className="btn btn-primary btn-outline-primary p-3">
                 Order Now
               </a>
             </span>

@@ -3,6 +3,7 @@
   background-repeat: no-repeat;
   background-position: top right;
   position: relative;
+  background-color: rgb(245, 243, 242);
 }
 .heading-section .subheading {
     font-size: 12px;

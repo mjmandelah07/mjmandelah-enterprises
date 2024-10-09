@@ -16,21 +16,21 @@ header {
 }
 
 .mj-navbar-light.scrolled.awake {
-    margin-top: 0px;
-    -webkit-transition: .3s all ease-out;
-    -o-transition: .3s all ease-out;
-    transition: .3s all ease-out;
+  margin-top: 0px;
+  -webkit-transition: 0.3s all ease-out;
+  -o-transition: 0.3s all ease-out;
+  transition: 0.3s all ease-out;
 }
 
 .mj-navbar-light.scrolled {
-    position: fixed;
-    right: 0;
-    left: 0;
-    top: 0;
-    margin-top: -130px;
-    background: #404044 !important;
-    -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  position: fixed;
+  right: 0;
+  left: 0;
+  top: 0;
+  margin-top: -130px;
+  background: #404044 !important;
+  -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
 }
 
 .nav-link:hover {
@@ -40,7 +40,7 @@ header {
   color: var(--navbar-hover-color) !important;
 }
 .active-link {
-  color: #ff9800 !important; 
+  color: #ff9800 !important;
   font-weight: bold;
 }
 .navbar-brand {
@@ -51,7 +51,6 @@ header {
   font-weight: 500;
   color: #f0f0f0;
   opacity: 1 !important;
-  padding: 30px 20px;
 }
 
 .nav-item .btn {
@@ -161,6 +160,36 @@ header {
   transform-origin: 50% 0;
   width: 100%;
 }
+
+
+.user-icon {
+  position: relative;
+  cursor: pointer;
+}
+
+.nav-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ddd;
+  padding: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.dropdown-item {
+  display: block;
+  padding: 8px 12px;
+  color: #333;
+  text-decoration: none;
+}
+
+.dropdown-item:hover {
+  background-color: #f8f9fa;
+  color: #000;
+}
+
 
 /* Hamburger styling end */
 

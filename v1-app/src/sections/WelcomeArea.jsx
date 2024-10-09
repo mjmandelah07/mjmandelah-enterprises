@@ -29,9 +29,7 @@ const WelcomeArea = () => {
                 Created god gathered don&#39;t you yielding herb you had. And
                 isn&#39;t god.
               </p>
-              <a href="#order" className="template-btn mt-3">
-                Order Now
-              </a>
+              
             </div>
           </div>
         </div>

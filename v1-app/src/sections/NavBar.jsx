@@ -1,10 +1,13 @@
 import { useState, useEffect } from "react";
 import { Outlet, Link, useLocation } from "react-router-dom";
-import "../assets/styles/sections/navbar.css"; // Assuming you have a CSS file
+import PersonIcon from "@mui/icons-material/Person";
+import "../assets/styles/sections/navbar.css";
 
 export default function NavBar() {
   const location = useLocation(); // Get the current route location
   const [isScrolled, setIsScrolled] = useState(false);
+  const [showDropdown, setShowDropdown] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,6 +23,18 @@ export default function NavBar() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [location]);
+
+  const handleMouseEnter = () => {
+    setShowDropdown(true);
+  };
+
+  const handleMouseLeave = () => {
+    setShowDropdown(false);
+  };
+
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+  };
 
   // Function to check if the link is active
   const isActiveLink = (path) => location.pathname === path;
@@ -77,38 +92,28 @@ export default function NavBar() {
                     Menu
                   </Link>
                 </li>
-                <li className="nav-item">
-                  {/* Today's Special link */}
-                  <a
-                    className={`nav-link px-lg-3 ${
-                      location.hash === "#daily" ? "active-link" : ""
-                    }`}
-                    href="/#daily"
-                  >
-                    Today&apos;s Special
-                  </a>
-                </li>
+
                 <li className="nav-item">
                   {/* Specialties link */}
-                  <a
+                  <Link
                     className={`nav-link px-lg-3 ${
-                      location.hash === "#specialities" ? "active-link" : ""
+                      isActiveLink("/specialties") ? "active-link" : ""
                     }`}
-                    href="/#specialities"
+                    to="/specialties"
                   >
-                    Specialities
-                  </a>
+                    Specialties
+                  </Link>
                 </li>
                 <li className="nav-item">
                   {/* Order link */}
-                  <a
+                  <Link
                     className={`nav-link px-lg-3 ${
-                      location.hash === "#order" ? "active-link" : ""
+                      isActiveLink("/order") ? "active-link" : ""
                     }`}
-                    href="/#order"
+                    to="/order"
                   >
                     Order
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
                   {/* Contact Us link */}
@@ -121,16 +126,48 @@ export default function NavBar() {
                     Contact Us
                   </Link>
                 </li>
-                <li className="nav-item">
-                  {/* Contact Us link */}
-                  <Link
-                    to="/contact"
-                    className={`nav-link px-lg-3 ${
-                      isActiveLink("/contact") ? "active-link" : ""
-                    }`}
-                  >
-                 Log In | Sign Up
-                  </Link>
+                <li
+                  className="nav-item user-icon"
+                  onMouseEnter={handleMouseEnter}
+                  onMouseLeave={handleMouseLeave}
+                >
+                  <PersonIcon
+                    sx={{
+                      color: "#f0f0f0",
+                      verticalAlign: "bottom",
+                      marginLeft: "15px",
+                      marginTop: "5px",
+                      transform: "translateY(2px)",
+                    }}
+                  />
+
+                  {showDropdown && (
+                    <div className="nav-dropdown-menu">
+                      {!isLoggedIn ? (
+                        <>
+                          <Link to="/login" className="dropdown-item">
+                            Log In
+                          </Link>
+                          <Link to="/signup" className="dropdown-item">
+                            Sign Up
+                          </Link>
+                        </>
+                      ) : (
+                        <>
+                          <Link to="/dashboard" className="dropdown-item">
+                            Dashboard
+                          </Link>
+                          <Link
+                            to="/"
+                            className="dropdown-item"
+                            onClick={handleLogout}
+                          >
+                            Log Out
+                          </Link>
+                        </>
+                      )}
+                    </div>
+                  )}
                 </li>
               </ul>
             </div>
