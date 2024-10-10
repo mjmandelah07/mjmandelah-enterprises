@@ -1,13 +1,23 @@
 import { useState, useEffect } from "react";
-import { Outlet, Link, useLocation } from "react-router-dom";
+import { Outlet, Link, useLocation} from "react-router-dom";
+
 import PersonIcon from "@mui/icons-material/Person";
+import useMediaQuery from "@mui/material/useMediaQuery";
 import "../assets/styles/sections/navbar.css";
 
 export default function NavBar() {
-  const location = useLocation(); // Get the current route location
+  const location = useLocation();
+
+  const isMobile = useMediaQuery("(max-width: 912px)");
   const [isScrolled, setIsScrolled] = useState(false);
   const [showDropdown, setShowDropdown] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  // Define routes that have a white background
+  const whiteBackgroundRoutes = ["/login", "/signup", "/dashboard", "/verify-email",];
+
+  // Check if the current route is in the white background routes
+  const isWhiteBackground = whiteBackgroundRoutes.includes(location.pathname);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,11 +35,21 @@ export default function NavBar() {
   }, [location]);
 
   const handleMouseEnter = () => {
-    setShowDropdown(true);
+    if (!isMobile) {
+      setShowDropdown(true); // Open on hover for desktop
+    }
   };
 
   const handleMouseLeave = () => {
-    setShowDropdown(false);
+    if (!isMobile) {
+      setShowDropdown(false); // Close on hover for desktop
+    }
+  };
+
+  const handleIconClick = () => {
+    if (isMobile) {
+      setShowDropdown(!showDropdown); // Toggle on click for mobile
+    }
   };
 
   const handleLogout = () => {
@@ -46,9 +66,12 @@ export default function NavBar() {
           isScrolled ? "header-sticky-on scrolled awake" : ""
         }`}
       >
-        <nav className="navbar navbar-expand-xl py-lg-0 f">
+        <nav className="navbar navbar-expand-lg py-lg-0 f">
           <div className="container">
-            <a className="navbar-brand me-3 py-4" href="/#home">
+            <a
+              className={`navbar-brand ${isWhiteBackground ? "dark" : ""}`}
+              href="/#home"
+            >
               MjMandelah
             </a>
             <button
@@ -76,7 +99,7 @@ export default function NavBar() {
                     to="/"
                     className={`nav-link px-lg-3 ${
                       isActiveLink("/") ? "active-link" : ""
-                    }`}
+                    } ${isWhiteBackground ? "dark" : ""}`}
                   >
                     Home
                   </Link>
@@ -87,7 +110,7 @@ export default function NavBar() {
                     to="/menu"
                     className={`nav-link px-lg-3 ${
                       isActiveLink("/menu") ? "active-link" : ""
-                    }`}
+                    } ${isWhiteBackground ? "dark" : ""}`}
                   >
                     Menu
                   </Link>
@@ -98,7 +121,7 @@ export default function NavBar() {
                   <Link
                     className={`nav-link px-lg-3 ${
                       isActiveLink("/specialties") ? "active-link" : ""
-                    }`}
+                    } ${isWhiteBackground ? "dark" : ""}`}
                     to="/specialties"
                   >
                     Specialties
@@ -109,7 +132,7 @@ export default function NavBar() {
                   <Link
                     className={`nav-link px-lg-3 ${
                       isActiveLink("/order") ? "active-link" : ""
-                    }`}
+                    } ${isWhiteBackground ? "dark" : ""}`}
                     to="/order"
                   >
                     Order
@@ -121,7 +144,7 @@ export default function NavBar() {
                     to="/contact"
                     className={`nav-link px-lg-3 ${
                       isActiveLink("/contact") ? "active-link" : ""
-                    }`}
+                    } ${isWhiteBackground ? "dark" : ""}`}
                   >
                     Contact Us
                   </Link>
@@ -130,10 +153,14 @@ export default function NavBar() {
                   className="nav-item user-icon"
                   onMouseEnter={handleMouseEnter}
                   onMouseLeave={handleMouseLeave}
+                  onClick={handleIconClick}
                 >
                   <PersonIcon
                     sx={{
-                      color: "#f0f0f0",
+                      color:
+                        isWhiteBackground && !isScrolled && !isMobile
+                          ? "#404044"
+                          : "#f0f0f0",
                       verticalAlign: "bottom",
                       marginLeft: "15px",
                       marginTop: "5px",
@@ -145,21 +172,39 @@ export default function NavBar() {
                     <div className="nav-dropdown-menu">
                       {!isLoggedIn ? (
                         <>
-                          <Link to="/login" className="dropdown-item">
+                          <Link
+                            to="/login"
+                            className={`dropdown-item ${
+                              isWhiteBackground ? "dark" : ""
+                            }`}
+                          >
                             Log In
                           </Link>
-                          <Link to="/signup" className="dropdown-item">
+                          <Link
+                            to="/signup"
+                            className={`dropdown-item ${
+                              isWhiteBackground ? "dark" : ""
+                            }`}
+                          >
                             Sign Up
                           </Link>
+                          
                         </>
                       ) : (
                         <>
-                          <Link to="/dashboard" className="dropdown-item">
+                          <Link
+                            to="/dashboard"
+                            className={`dropdown-item ${
+                              isWhiteBackground ? "dark" : ""
+                            }`}
+                          >
                             Dashboard
                           </Link>
                           <Link
                             to="/"
-                            className="dropdown-item"
+                            className={`dropdown-item ${
+                              isWhiteBackground ? "dark" : ""
+                            }`}
                             onClick={handleLogout}
                           >
                             Log Out

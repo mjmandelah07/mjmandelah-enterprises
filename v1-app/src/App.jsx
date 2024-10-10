@@ -10,6 +10,8 @@ import NavBar from "./sections/NavBar";
 import Menu from "./pages/Menu";
 import Specialties from "./pages/Specialties";
 import Order from "./pages/Order";
+import AuthPage from "./pages/AuthPage";
+import VerifyEmail from "./pages/VerifyEmail";
 import Spinner from "./components/Spinner";
 
 import AdminLogin from "./pages/admin/AdminLogin";
@@ -62,6 +64,9 @@ function App() {
         <Routes>
           <Route path="/" element={<NavBar />}>
             <Route index element={<HomePage />} />
+            <Route path="/login" element={<AuthPage />} />
+            <Route path="/signup" element={<AuthPage />} />
+            <Route path="/verify-email" element={<VerifyEmail />} />
             <Route path="menu" element={<Menu />} />
             <Route path="specialties" element={<Specialties />} />
             <Route path="order" element={<Order />} />
